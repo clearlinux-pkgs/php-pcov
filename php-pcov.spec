@@ -4,7 +4,7 @@
 #
 Name     : php-pcov
 Version  : 1.0.11
-Release  : 25
+Release  : 26
 URL      : https://pecl.php.net/get/pcov-1.0.11.tgz
 Source0  : https://pecl.php.net/get/pcov-1.0.11.tgz
 Summary  : No detailed summary available
