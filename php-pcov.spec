@@ -4,13 +4,14 @@
 #
 Name     : php-pcov
 Version  : 1.0.11
-Release  : 32
+Release  : 33
 URL      : https://pecl.php.net/get/pcov-1.0.11.tgz
 Source0  : https://pecl.php.net/get/pcov-1.0.11.tgz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : PHP-3.01
 Requires: php-pcov-lib = %{version}-%{release}
+Requires: php-pcov-license = %{version}-%{release}
 BuildRequires : buildreq-php
 BuildRequires : pcre2-dev
 
@@ -23,9 +24,18 @@ PCOV
 %package lib
 Summary: lib components for the php-pcov package.
 Group: Libraries
+Requires: php-pcov-license = %{version}-%{release}
 
 %description lib
 lib components for the php-pcov package.
+
+
+%package license
+Summary: license components for the php-pcov package.
+Group: Default
+
+%description license
+license components for the php-pcov package.
 
 
 %prep
@@ -41,6 +51,8 @@ phpize
 make  %{?_smp_mflags}
 
 %install
+mkdir -p %{buildroot}/usr/share/package-licenses/php-pcov
+cp %{_builddir}/pcov-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/php-pcov/075ae77f2a6472bbcdc2c7f6fb623b96361946e4
 %make_install
 
 
@@ -49,4 +61,8 @@ make  %{?_smp_mflags}
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/extensions/no-debug-non-zts-20210902/pcov.so
+/usr/lib64/extensions/no-debug-non-zts-20220829/pcov.so
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/php-pcov/075ae77f2a6472bbcdc2c7f6fb623b96361946e4
