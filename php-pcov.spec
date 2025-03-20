@@ -7,7 +7,7 @@
 #
 Name     : php-pcov
 Version  : 1.0.12
-Release  : 79
+Release  : 80
 URL      : https://pecl.php.net/get/pcov-1.0.12.tgz
 Source0  : https://pecl.php.net/get/pcov-1.0.12.tgz
 Summary  : No detailed summary available
